@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fade Text Component Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .spacer {
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      margin: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .spacer p {
+      font-size: 1.5rem;
+      color: #667eea;
+      font-weight: 600;
+    }
+
+    .demo-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 3rem 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .demo-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #667eea;
+    }
+
+    .demo-instruction {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: #f0f0f0;
+      border-left: 4px solid #667eea;
+      border-radius: 4px;
+    }
+
+    #fadeText {
+      font-size: 1.3rem;
+      line-height: 2;
+    }
+
+    .word {
+      display: inline;
+      color: #ccc;
+      transition: color 0.3s ease-out;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #333;
+      color: white;
+      margin-top: 4rem;
+    }
+
+    .settings-panel {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      border: 2px solid #e0e0e0;
+    }
+
+    .settings-panel h3 {
+      margin-bottom: 1rem;
+      color: #667eea;
+    }
+
+    .setting-item {
+      margin-bottom: 1rem;
+    }
+
+    .setting-item label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #555;
+    }
+
+    .setting-item input[type="range"],
+    .setting-item input[type="color"],
+    .setting-item input[type="text"] {
+      width: 100%;
+      padding: 0.5rem;
+    }
+
+    .setting-item input[type="range"] {
+      padding: 0;
+    }
+
+    .setting-value {
+      display: inline-block;
+      margin-left: 1rem;
+      color: #667eea;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎨 Fade Text Component Demo</h1>
+    <p>Scroll-based text reveal animation for Adapt Learning</p>
+  </header>
+
+  <div class="spacer">
+    <p>👇 Scroll down to see the effect 👇</p>
+  </div>
+
+  <div class="demo-container">
+    <h2 class="demo-title">Fade Text Component</h2>
+    
+    <div class="demo-instruction">
+      <strong>Instructions:</strong> Scroll down slowly to reveal the text below. Watch as each word fades from gray to black as it crosses the trigger line (60% from the top of your viewport).
+    </div>
+
+    <div class="settings-panel">
+      <h3>⚙️ Settings (Try adjusting these!)</h3>
+      
+      <div class="setting-item">
+        <label for="triggerPoint">
+          Trigger Point: <span class="setting-value" id="triggerValue">0.6</span>
+        </label>
+        <input type="range" id="triggerPoint" min="0" max="1" step="0.05" value="0.6">
+      </div>
+
+      <div class="setting-item">
+        <label for="fadedColor">Faded Color:</label>
+        <input type="color" id="fadedColor" value="#cccccc">
+      </div>
+
+      <div class="setting-item">
+        <label for="activeColor">Active Color:</label>
+        <input type="color" id="activeColor" value="#000000">
+      </div>
+
+      <div class="setting-item">
+        <label for="transitionSpeed">
+          Transition Speed: <span class="setting-value" id="speedValue">0.3s</span>
+        </label>
+        <input type="range" id="transitionSpeed" min="0.1" max="2" step="0.1" value="0.3">
+      </div>
+    </div>
+
+    <div id="fadeText">
+      This is an example of the fade text component that replicates the functionality you requested. As you scroll down the page, each word will gradually fade from gray to black creating a smooth and engaging reading experience. The effect is triggered when words cross a specific point in the viewport which by default is set at sixty percent from the top. This component has been built following Adapt Learning best practices inspired by the adapt-marqueetext component architecture. It includes proper accessibility support with reduced motion preferences proper ARIA attributes and semantic HTML structure. The implementation uses efficient scroll handling with throttling to maintain smooth performance even with large amounts of text. You can customize various aspects including the trigger point transition speed colors and timing functions. The component is fully responsive and works across all modern browsers. It also respects user preferences for reduced motion ensuring an accessible experience for all users. The styling uses CSS custom properties making it easy to theme and customize without touching the core component code. This approach allows designers to adjust colors fonts and spacing simply by overriding CSS variables in their theme files. The JavaScript implementation is clean efficient and follows modern best practices with proper event cleanup and memory management. Every word is individually tracked as it scrolls through the viewport creating this beautiful cascading fade effect that draws the eye down the page. The component integrates seamlessly with Adapt Learning's component framework using the standard model view architecture. Try scrolling back up to see the reverse effect as words fade back to gray when they move above the trigger point.
+    </div>
+  </div>
+
+  <div class="spacer">
+    <p>✨ Keep scrolling ✨</p>
+  </div>
+
+  <div class="demo-container">
+    <h2 class="demo-title">How It Works</h2>
+    <p id="fadeText2">
+      The component works by splitting your text into individual words wrapping each in a span element and then monitoring scroll position. As each word crosses the trigger threshold it smoothly transitions from the faded color to the active color. This creates an engaging progressive disclosure effect that encourages users to scroll and read through the content. The implementation is performant using throttled scroll events and efficient DOM queries. It respects accessibility preferences and provides fallbacks for users who prefer reduced motion.
+    </p>
+  </div>
+
+  <footer>
+    <p>Built for Adapt Learning Framework | adapt-fadetext component</p>
+    <p>Inspired by adapt-marqueetext architecture and best practices</p>
+  </footer>
+
+  <script>
+    // Initialize first paragraph
+    const paragraph = document.getElementById("fadeText");
+    const words = paragraph.innerText.split(" ");
+    paragraph.innerHTML = "";
+
+    words.forEach(word => {
+      const span = document.createElement("span");
+      span.classList.add("word");
+      span.innerText = word + " ";
+      paragraph.appendChild(span);
+    });
+
+    // Initialize second paragraph
+    const paragraph2 = document.getElementById("fadeText2");
+    const words2 = paragraph2.innerText.split(" ");
+    paragraph2.innerHTML = "";
+
+    words2.forEach(word => {
+      const span = document.createElement("span");
+      span.classList.add("word");
+      span.innerText = word + " ";
+      paragraph2.appendChild(span);
+    });
+
+    // Settings
+    let triggerPoint = 0.6;
+    let fadedColor = "#cccccc";
+    let activeColor = "#000000";
+    let transitionSpeed = "0.3s";
+
+    const wordElements = document.querySelectorAll(".word");
+
+    function handleScroll() {
+      const triggerPosition = window.innerHeight * triggerPoint;
+
+      wordElements.forEach(word => {
+        const rect = word.getBoundingClientRect();
+        if (rect.top < triggerPosition) {
+          word.style.color = activeColor;
+        } else {
+          word.style.color = fadedColor;
+        }
+      });
+    }
+
+    // Throttle scroll handler
+    let scrollTimeout;
+    function throttledScroll() {
+      if (!scrollTimeout) {
+        scrollTimeout = setTimeout(() => {
+          handleScroll();
+          scrollTimeout = null;
+        }, 16); // ~60fps
+      }
+    }
+
+    window.addEventListener("scroll", throttledScroll);
+    handleScroll();
+
+    // Settings controls
+    document.getElementById("triggerPoint").addEventListener("input", (e) => {
+      triggerPoint = parseFloat(e.target.value);
+      document.getElementById("triggerValue").textContent = triggerPoint;
+      handleScroll();
+    });
+
+    document.getElementById("fadedColor").addEventListener("input", (e) => {
+      fadedColor = e.target.value;
+      handleScroll();
+    });
+
+    document.getElementById("activeColor").addEventListener("input", (e) => {
+      activeColor = e.target.value;
+      handleScroll();
+    });
+
+    document.getElementById("transitionSpeed").addEventListener("input", (e) => {
+      transitionSpeed = e.target.value + "s";
+      document.getElementById("speedValue").textContent = transitionSpeed;
+      wordElements.forEach(word => {
+        word.style.transition = `color ${transitionSpeed} ease-out`;
+      });
+    });
+
+    // Initialize transition speed
+    wordElements.forEach(word => {
+      word.style.transition = `color ${transitionSpeed} ease-out`;
+    });
+  </script>
+
+</body>
+</html>

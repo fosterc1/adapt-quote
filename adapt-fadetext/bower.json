@@ -1,0 +1,20 @@
+{
+  "name": "adapt-fadetext",
+  "version": "1.0.0",
+  "framework": ">=5.5",
+  "homepage": "https://github.com/yourusername/adapt-fadetext",
+  "displayName": "Fade Text",
+  "component": "fadetext",
+  "description": "A scroll-based text fade component that gradually reveals text as the user scrolls",
+  "main": "/js/adapt-fadetext.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component",
+    "scroll",
+    "fade",
+    "text",
+    "reveal",
+    "animation"
+  ],
+  "license": "GPLv3"
+}

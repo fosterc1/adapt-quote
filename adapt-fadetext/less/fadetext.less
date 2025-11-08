@@ -1,0 +1,159 @@
+// --------------------------------------------------
+// adapt-fadetext
+// --------------------------------------------------
+
+.fadetext {
+  
+  // Component wrapper
+  &__widget {
+    position: relative;
+    width: 100%;
+  }
+
+  // Instruction text
+  &__instruction {
+    margin-bottom: @component-padding;
+    
+    &-inner {
+      .text-styling();
+    }
+  }
+
+  // Main content container
+  &__content {
+    position: relative;
+    padding: @component-padding;
+    
+    // CSS Custom Properties for easy customization
+    --fadetext-faded-color: #cccccc;
+    --fadetext-active-color: #000000;
+    --fadetext-transition-speed: 0.3s;
+    --fadetext-transition-timing: ease-out;
+    --fadetext-font-size: inherit;
+    --fadetext-line-height: 1.6;
+    --fadetext-font-weight: inherit;
+    
+    // Accessibility region styling
+    &[role="region"] {
+      outline: none;
+      
+      &:focus-visible {
+        outline: 2px solid @focus-outline;
+        outline-offset: 2px;
+      }
+    }
+  }
+
+  // Text container
+  &__text {
+    font-size: var(--fadetext-font-size);
+    line-height: var(--fadetext-line-height);
+    font-weight: var(--fadetext-font-weight);
+    
+    // Ensure proper text wrapping
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  // Individual word spans
+  &__word {
+    display: inline;
+    color: var(--fadetext-faded-color);
+    transition: color var(--fadetext-transition-speed) var(--fadetext-transition-timing);
+    
+    // Active state
+    &.is-active {
+      color: var(--fadetext-active-color);
+    }
+  }
+
+  // Static fallback (when animation is disabled)
+  &__static {
+    display: none;
+    color: var(--fadetext-active-color);
+  }
+
+  // When animation is disabled
+  &__content.is-static {
+    .fadetext__text {
+      display: none;
+    }
+    
+    .fadetext__static {
+      display: block;
+    }
+  }
+
+}
+
+// --------------------------------------------------
+// Reduced motion support
+// --------------------------------------------------
+
+@media (prefers-reduced-motion: reduce) {
+  .fadetext {
+    &__word {
+      transition: none !important;
+      color: var(--fadetext-active-color) !important;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Responsive adjustments
+// --------------------------------------------------
+
+.respond-to-small-device({
+  .fadetext {
+    &__content {
+      --fadetext-font-size: 0.9rem;
+      padding: @component-padding-small;
+    }
+    
+    &__instruction {
+      margin-bottom: @component-padding-small;
+    }
+  }
+});
+
+.respond-to-medium-device({
+  .fadetext {
+    &__content {
+      --fadetext-font-size: 1rem;
+    }
+  }
+});
+
+.respond-to-large-device({
+  .fadetext {
+    &__content {
+      --fadetext-font-size: 1.1rem;
+    }
+  }
+});
+
+// --------------------------------------------------
+// High contrast mode support
+// --------------------------------------------------
+
+@media (prefers-contrast: high) {
+  .fadetext {
+    &__word {
+      &.is-active {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// --------------------------------------------------
+// Print styles
+// --------------------------------------------------
+
+@media print {
+  .fadetext {
+    &__word {
+      color: var(--fadetext-active-color) !important;
+    }
+  }
+}
