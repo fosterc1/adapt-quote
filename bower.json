@@ -1,8 +1,8 @@
 {
   "name": "adapt-fadetext",
-  "version": "1.0.0",
-  "framework": ">=5.5",
-  "homepage": "https://github.com/yourusername/adapt-fadetext",
+  "version": "1.0.6",
+  "framework": "^5.0.0",
+  "homepage": "https://github.com/fosterc1/adapt-quote",
   "displayName": "Fade Text",
   "component": "fadetext",
   "description": "A scroll-based text fade component that gradually reveals text as the user scrolls",
@@ -16,5 +16,6 @@
     "reveal",
     "animation"
   ],
-  "license": "GPLv3"
+  "license": "GPL-3.0",
+  "targetAttribute": "_fadetext"
 }

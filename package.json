@@ -1,30 +1,17 @@
 {
   "name": "adapt-fadetext",
-  "version": "1.0.0",
-  "description": "A scroll-based text fade component for the Adapt Learning Framework",
+  "version": "1.0.6",
+  "description": "A scroll-based text fade component that gradually reveals text as the user scrolls",
   "main": "js/adapt-fadetext.js",
   "keywords": [
-    "adapt",
-    "adapt-component",
     "adapt-plugin",
+    "adapt-component",
     "scroll",
     "fade",
     "text",
-    "reveal",
     "animation"
   ],
   "author": "Adapt Community",
   "license": "GPL-3.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yourusername/adapt-fadetext.git"
-  },
-  "bugs": {
-    "url": "https://github.com/yourusername/adapt-fadetext/issues"
-  },
-  "framework": ">=5.5",
-  "adapt_framework": {
-    "component": "fadetext",
-    "version": ">=5.5"
-  }
+  "framework": ">=5.0.0"
 }

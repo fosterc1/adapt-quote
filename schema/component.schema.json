@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://adaptlearning.org/schemas/component/fadetext.schema.json",
+  "type": "object",
+  "title": "Fade Text",
+  "description": "A scroll-based text fade component that gradually reveals text as the user scrolls",
+  "required": ["body"],
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "title": "Supported layout",
+      "default": "both",
+      "enum": ["full-width", "half-width", "both"],
+      "_adapt": {
+        "editorOnly": true
+      }
+    },
+    "instruction": {
+      "type": "string",
+      "title": "Instruction",
+      "description": "Instruction text for the component",
+      "default": "",
+      "_adapt": {
+        "translatable": true
+      }
+    },
+    "body": {
+      "type": "string",
+      "title": "Body text",
+      "description": "The text content that will fade in as the user scrolls. Each word will fade independently.",
+      "default": "",
+      "_adapt": {
+        "translatable": true
+      },
+      "_backboneForms": "TextArea"
+    },
+    "_fadeText": {
+      "type": "object",
+      "title": "Fade Text Settings",
+      "description": "Configuration options for the fade animation",
+      "properties": {
+        "_triggerPoint": {
+          "type": "number",
+          "title": "Trigger Point",
+          "description": "The viewport position (0-1) where text starts to fade in. 0.6 = 60% from top of viewport",
+          "default": 0.6,
+          "minimum": 0,
+          "maximum": 1
+        },
+        "_fadedColor": {
+          "type": "string",
+          "title": "Faded Text Color",
+          "description": "The color of text before it fades in (e.g., #cccccc)",
+          "default": "#cccccc",
+          "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+        },
+        "_activeColor": {
+          "type": "string",
+          "title": "Active Text Color",
+          "description": "The color of text after it fades in (e.g., #000000)",
+          "default": "#000000",
+          "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+        },
+        "_transitionSpeed": {
+          "type": "string",
+          "title": "Transition Speed",
+          "description": "CSS transition speed for the fade effect (e.g., 0.3s)",
+          "default": "0.3s"
+        },
+        "_smoothness": {
+          "type": "string",
+          "title": "Transition Timing",
+          "description": "CSS transition timing function (e.g., ease-out, linear, ease-in-out)",
+          "default": "ease-out",
+          "enum": ["linear", "ease", "ease-in", "ease-out", "ease-in-out"]
+        },
+        "_disableAnimation": {
+          "type": "boolean",
+          "title": "Disable Animation",
+          "description": "Disable the fade animation (useful for accessibility)",
+          "default": false
+        }
+      }
+    }
+  }
+}
