@@ -2,7 +2,7 @@
   "name": "adapt-fadetext",
   "version": "1.0.13",
   "framework": "^5.0.0",
-  "homepage": "https://github.com/fosterc1/adapt-quote",
+  "homepage": "https://github.com/fosterc1/adapt-fadetext",
   "displayName": "Fade Text",
   "component": "fadetext",
   "description": "A scroll-based text fade component that gradually reveals text as the user scrolls",
