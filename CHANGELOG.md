@@ -2,10 +2,37 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.11] - 2025-11-13 - PRODUCTION READY ✅
+### Changed
+- Official production release
+- Uses `schemas/` folder (plural) for Framework v5+ compatibility
+- Successfully tested and verified on Adapt Authoring Tool v5.53.3
+- All schema configurations confirmed working
+
+### Fixed
+- Corrected version number in bower.json/package.json (was incorrectly 1.0.9 in v1.0.10 test)
+
+### Confirmed Working
+- ✅ Uploads successfully to Adapt Authoring Tool v5.53.3
+- ✅ Component appears as "Fade Text" in available components
+- ✅ All functionality verified
+
+## [1.0.10] - 2025-11-13 - TESTING RELEASE
+### Added
+- Multiple test versions with different schema folder configurations
+- Comprehensive testing documentation
+
+### Issues
+- v1.0.10-schemas-plural.zip had incorrect version number inside (1.0.9 instead of 1.0.10)
+
 ## [1.0.9] - 2025-11-13
 ### Changed
 - Version increment for plugin reinstall testing
 - No functional changes from v1.0.8
+
+### Confirmed
+- Successfully uploads to Adapt Authoring Tool v5.53.3
+- Uses `schema/` folder (singular)
 
 ## [1.0.8] - 2025-11-13
 ### Changed
@@ -13,6 +40,9 @@ All notable changes to this project will be documented in this file.
 - Moved technical documentation to docs/ folder
 - Created comprehensive CHANGELOG.md
 - Updated README.md version badge
+
+### Testing
+- Confirmed working with no schema folder (only properties.schema)
 
 ## [1.0.7] - 2025-11-13
 ### Changed

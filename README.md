@@ -1,7 +1,7 @@
 # Adapt Fade Text
 
 [![Adapt Component](https://img.shields.io/badge/adapt-component-blue)](https://github.com/fosterc1/adapt-quote)
-[![Version](https://img.shields.io/badge/version-1.0.7-green)](https://github.com/fosterc1/adapt-quote)
+[![Version](https://img.shields.io/badge/version-1.0.11-green)](https://github.com/fosterc1/adapt-quote/releases/tag/v1.0.11)
 [![Framework](https://img.shields.io/badge/framework-%3E%3D5.5-orange)](https://www.adaptlearning.org/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-blue)](LICENSE)
 [![Accessibility](https://img.shields.io/badge/accessibility-WCAG%202.1-green)](#accessibility)
