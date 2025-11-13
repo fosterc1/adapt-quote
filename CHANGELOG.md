@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.15] - 2025-11-13 - LESS COMPILATION FIX ✅
+### Fixed
+- **CRITICAL**: Fixed LESS compilation error - removed undefined Adapt mixins
+- Replaced `.respond-to-small-device()` mixins with standard media queries
+- Replaced `.text-styling()` mixin with basic CSS properties
+- Added fallback values for `@component-padding` and `@focus-outline` variables
+
+### Changed
+- Now uses standard CSS media queries instead of Adapt Framework mixins
+- Better compatibility with different Adapt Framework versions
+- Self-contained LESS with fallback variables
+
+### Technical Details
+- Mobile breakpoint: max-width 760px
+- Tablet breakpoint: 761px - 1024px
+- Desktop breakpoint: min-width 1025px
+- Component padding fallback: 2rem
+- Focus outline fallback: #4285f4
+
 ## [1.0.14] - 2025-11-13 - GITHUB RELEASE FIX ✅
 ### Fixed
 - **CRITICAL**: Identified GitHub ZIP download issue - branch name appended to folder

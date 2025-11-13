@@ -1,0 +1,103 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Scrolling text area. Text will fade in as you scroll.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both"
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "help": "This is the instruction text",
+      "translatable": true
+    },
+    "body": {
+      "type": "string",
+      "required": true,
+      "default": "",
+      "inputType": "TextArea",
+      "validators": ["required"],
+      "help": "The text content that will fade in as the user scrolls. Each word will fade independently.",
+      "translatable": true
+    },
+    "_fadeText": {
+      "type": "object",
+      "required": true,
+      "title": "Fade Text Settings",
+      "properties": {
+        "_triggerPoint": {
+          "type": "number",
+          "required": true,
+          "default": 0.6,
+          "title": "Trigger Point",
+          "inputType": "Number",
+          "validators": ["number"],
+          "help": "The viewport position (0-1) where text starts to fade in. 0.6 = 60% from top of viewport"
+        },
+        "_fadedColor": {
+          "type": "string",
+          "required": true,
+          "default": "#cccccc",
+          "title": "Faded Text Color",
+          "inputType": "Text",
+          "validators": [],
+          "help": "The color of text before it fades in (e.g., #ccc)"
+        },
+        "_activeColor": {
+          "type": "string",
+          "required": true,
+          "default": "#000000",
+          "title": "Active Text Color",
+          "inputType": "Text",
+          "validators": [],
+          "help": "The color of text after it fades in (e.g., #000)"
+        },
+        "_transitionSpeed": {
+          "type": "string",
+          "required": true,
+          "default": "0.3s",
+          "title": "Transition Speed",
+          "inputType": "Text",
+          "validators": [],
+          "help": "CSS transition speed for the fade effect (e.g., 0.3s)"
+        },
+        "_smoothness": {
+          "type": "string",
+          "required": true,
+          "default": "ease-out",
+          "title": "Transition Timing",
+          "inputType": "Text",
+          "validators": [],
+          "help": "CSS transition timing function (e.g., ease-out, linear, ease-in-out)"
+        },
+        "_disableAnimation": {
+          "type": "boolean",
+          "required": true,
+          "default": false,
+          "title": "Disable Animation",
+          "inputType": "Checkbox",
+          "validators": [],
+          "help": "Disable the fade animation (useful for accessibility)"
+        }
+      }
+    }
+  }
+}

@@ -2,10 +2,6 @@
 // adapt-fadetext
 // --------------------------------------------------
 
-// Fallback variables if not defined by theme
-@component-padding: 2rem;
-@focus-outline: #4285f4;
-
 .fadetext {
   
   // Component wrapper
@@ -19,9 +15,7 @@
     margin-bottom: @component-padding;
     
     &-inner {
-      // Basic text styling
-      font-size: inherit;
-      line-height: 1.6;
+      .text-styling();
     }
   }
 
@@ -109,37 +103,34 @@
 // Responsive adjustments
 // --------------------------------------------------
 
-// Small devices (mobile)
-@media (max-width: 760px) {
+.respond-to-small-device({
   .fadetext {
     &__content {
       --fadetext-font-size: 0.9rem;
-      padding: 1rem;
+      padding: @component-padding-small;
     }
     
     &__instruction {
-      margin-bottom: 1rem;
+      margin-bottom: @component-padding-small;
     }
   }
-}
+});
 
-// Medium devices (tablet)
-@media (min-width: 761px) and (max-width: 1024px) {
+.respond-to-medium-device({
   .fadetext {
     &__content {
       --fadetext-font-size: 1rem;
     }
   }
-}
+});
 
-// Large devices (desktop)
-@media (min-width: 1025px) {
+.respond-to-large-device({
   .fadetext {
     &__content {
       --fadetext-font-size: 1.1rem;
     }
   }
-}
+});
 
 // --------------------------------------------------
 // High contrast mode support

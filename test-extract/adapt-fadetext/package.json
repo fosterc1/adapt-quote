@@ -1,21 +1,17 @@
 {
   "name": "adapt-fadetext",
-  "version": "1.0.15",
-  "framework": "^5.0.0",
-  "homepage": "https://github.com/fosterc1/adapt-fadetext",
-  "displayName": "Fade Text",
-  "component": "fadetext",
+  "version": "1.0.13",
   "description": "A scroll-based text fade component that gradually reveals text as the user scrolls",
-  "main": "/js/adapt-fadetext.js",
+  "main": "js/adapt-fadetext.js",
   "keywords": [
     "adapt-plugin",
     "adapt-component",
     "scroll",
     "fade",
     "text",
-    "reveal",
     "animation"
   ],
+  "author": "Adapt Community",
   "license": "GPL-3.0",
-  "targetAttribute": "_fadetext"
+  "framework": ">=5.0.0"
 }

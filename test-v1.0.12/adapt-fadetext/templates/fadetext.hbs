@@ -1,0 +1,40 @@
+{{! Maintainers - Robert Peek}}
+<div class="component__inner fadetext__inner">
+
+  {{> component this}}
+
+  <div class="component__widget fadetext__widget">
+    
+    {{#if instruction}}
+    <div class="fadetext__instruction">
+      <div class="fadetext__instruction-inner">
+        {{{instruction}}}
+      </div>
+    </div>
+    {{/if}}
+
+    <div class="fadetext__content" 
+         role="region" 
+         aria-label="{{ariaRegion}}"
+         data-trigger-point="{{_fadeText._triggerPoint}}"
+         data-faded-color="{{_fadeText._fadedColor}}"
+         data-active-color="{{_fadeText._activeColor}}"
+         data-transition-speed="{{_fadeText._transitionSpeed}}"
+         data-smoothness="{{_fadeText._smoothness}}"
+         data-disable-animation="{{_fadeText._disableAnimation}}">
+      
+      <div class="fadetext__text" id="fadetext-{{_id}}">
+        {{{body}}}
+      </div>
+
+      {{#if _fadeText._disableAnimation}}
+      <div class="fadetext__static" aria-live="polite">
+        {{{body}}}
+      </div>
+      {{/if}}
+
+    </div>
+
+  </div>
+
+</div>

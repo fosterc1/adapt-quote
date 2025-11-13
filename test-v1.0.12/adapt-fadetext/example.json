@@ -1,0 +1,21 @@
+{
+  "_id": "c-105",
+  "_parentId": "b-10",
+  "_type": "component",
+  "_component": "fadetext",
+  "_classes": "",
+  "_layout": "full",
+  "title": "Scroll to Reveal Text",
+  "displayTitle": "Scroll to Reveal Text",
+  "instruction": "Scroll down to reveal the text below. Watch as each word fades into view.",
+  "body": "This is an example of the fade text component. As you scroll down the page, each word will gradually fade from gray to black. The effect creates a smooth, engaging reading experience that encourages users to scroll through the content. You can customize the colors, transition speed, and trigger point to match your design requirements. This component is fully accessible and respects user preferences for reduced motion.",
+  "ariaRegion": "Scrolling text area. Text will fade in as you scroll.",
+  "_fadeText": {
+    "_triggerPoint": 0.6,
+    "_fadedColor": "#cccccc",
+    "_activeColor": "#000000",
+    "_transitionSpeed": "0.3s",
+    "_smoothness": "ease-out",
+    "_disableAnimation": false
+  }
+}
