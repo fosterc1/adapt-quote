@@ -1,6 +1,6 @@
 {
   "name": "adapt-fadetext",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A scroll-based text fade component for the Adapt Learning Framework",
   "main": "js/adapt-fadetext.js",
   "keywords": [
