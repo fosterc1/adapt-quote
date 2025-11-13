@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.16] - 2025-11-13 - JAVASCRIPT RUNTIME FIX ✅
+### Fixed
+- **CRITICAL**: Removed `this.checkIfResetOnRevisit()` call - doesn't exist in Adapt v5
+- Fixed runtime error: "TypeError: this.checkIfResetOnRevisit is not a function"
+- Component now renders correctly without errors
+
+### Technical Details
+- `checkIfResetOnRevisit()` was a method from Adapt Framework v4
+- Adapt v5 uses different lifecycle methods
+- Removed obsolete method call from preRender()
+
 ## [1.0.15] - 2025-11-13 - LESS COMPILATION FIX ✅
 ### Fixed
 - **CRITICAL**: Fixed LESS compilation error - removed undefined Adapt mixins

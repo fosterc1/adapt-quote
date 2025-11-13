@@ -13,7 +13,7 @@ define([
     }
 
     preRender() {
-      this.checkIfResetOnRevisit();
+      // No pre-render actions needed for this component
     }
 
     postRender() {
